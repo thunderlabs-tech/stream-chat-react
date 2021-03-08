@@ -290,8 +290,8 @@ const UnMemoizedMessageLivestream = <
               {message.type === 'error' && message.command && (
                 <p data-testid='message-livestream-command-error'>
                   <ErrorIcon />
-                  {/* TODO: Translate following sentence */}
-                  <strong>/{message.command}</strong> is not a valid command
+                  <strong>/{message.command}</strong>{' '}
+                  {t('is not a valid command')}
                 </p>
               )}
               {message.status === 'failed' && (
