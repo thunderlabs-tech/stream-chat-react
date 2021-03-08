@@ -21,7 +21,7 @@ import {
   ReactionIcon,
   ThreadIcon,
 } from './icons';
-import { areMessagePropsEqual, getReadByTooltipText } from './utils';
+import { areMessageUIPropsEqual, getReadByTooltipText } from './utils';
 
 import { Attachment as DefaultAttachment } from '../Attachment';
 import { Avatar as DefaultAvatar } from '../Avatar';
@@ -58,12 +58,6 @@ import type {
   UnknownType,
 } from '../../../types/types';
 
-/**
- * MessageTeam - Render component, should be used together with the Message component
- * Implements the look and feel for a team style collaboration environment
- *
- * @example ./MessageTeam.md
- */
 const UnMemoizedMessageTeam = <
   At extends UnknownType = DefaultAttachmentType,
   Ch extends UnknownType = DefaultChannelType,
@@ -379,6 +373,7 @@ const UnMemoizedMessageTeam = <
               message.text !== '' &&
               isReactionEnabled && (
                 <ReactionsList
+                  handleReaction={handleReaction}
                   onClick={onReactionListClick}
                   own_reactions={message.own_reactions}
                   reaction_counts={message.reaction_counts || undefined}
@@ -419,6 +414,7 @@ const UnMemoizedMessageTeam = <
             message.text === '' &&
             isReactionEnabled && (
               <ReactionsList
+                handleReaction={handleReaction}
                 onClick={onReactionListClick}
                 own_reactions={message.own_reactions}
                 reaction_counts={message.reaction_counts || undefined}
@@ -559,7 +555,12 @@ const MessageTeamAttachments = <
   return null;
 };
 
+/**
+ * MessageTeam - Render component, should be used together with the Message component
+ * Implements the look and feel for a team style collaboration environment
+ * @example ./MessageTeam.md
+ */
 export const MessageTeam = React.memo(
   UnMemoizedMessageTeam,
-  areMessagePropsEqual,
+  areMessageUIPropsEqual,
 ) as typeof UnMemoizedMessageTeam;

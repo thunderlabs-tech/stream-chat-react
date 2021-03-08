@@ -25,6 +25,7 @@ import {
   ReactionIcon,
   ThreadIcon,
 } from './icons';
+import { areMessageUIPropsEqual } from './utils';
 
 import { Attachment as DefaultAttachment } from '../Attachment';
 import { Avatar as DefaultAvatar } from '../Avatar';
@@ -56,12 +57,6 @@ import type {
   UnknownType,
 } from '../../../types/types';
 
-/**
- * MessageLivestream - Render component, should be used together with the Message component
- * Implements the look and feel for a livestream use case.
- *
- * @example ./MessageLivestream.md
- */
 const UnMemoizedMessageLivestream = <
   At extends UnknownType = DefaultAttachmentType,
   Ch extends UnknownType = DefaultChannelType,
@@ -463,6 +458,12 @@ const MessageLivestreamActions = <
   );
 };
 
+/**
+ * MessageLivestream - Render component, should be used together with the Message component
+ * Implements the look and feel for a livestream use case.
+ * @example ./MessageLivestream.md
+ */
 export const MessageLivestream = React.memo(
   UnMemoizedMessageLivestream,
+  areMessageUIPropsEqual,
 ) as typeof UnMemoizedMessageLivestream;

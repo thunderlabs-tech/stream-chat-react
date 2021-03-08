@@ -16,7 +16,7 @@ import {
 } from './hooks';
 import { DeliveredCheckIcon } from './icons';
 import {
-  areMessagePropsEqual,
+  areMessageUIPropsEqual,
   getReadByTooltipText,
   messageHasAttachments,
   messageHasReactions,
@@ -54,11 +54,6 @@ import type {
   UnknownType,
 } from '../../../types/types';
 
-/**
- * MessageSimple - UI component that renders a message and receives functionality from the Message/MessageList components
- *
- * @example ./MessageSimple.md
- */
 const UnMemoizedMessageSimple = <
   At extends UnknownType = DefaultAttachmentType,
   Ch extends UnknownType = DefaultChannelType,
@@ -369,7 +364,11 @@ const MessageSimpleStatus = <
   return null;
 };
 
+/**
+ * MessageSimple - UI component that renders a message and receives functionality from the Message/MessageList components
+ * @example ./MessageSimple.md
+ */
 export const MessageSimple = React.memo(
   UnMemoizedMessageSimple,
-  areMessagePropsEqual,
+  areMessageUIPropsEqual,
 ) as typeof UnMemoizedMessageSimple;

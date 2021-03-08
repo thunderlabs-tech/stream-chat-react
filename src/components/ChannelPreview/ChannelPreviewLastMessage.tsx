@@ -111,23 +111,22 @@ const UnMemoizedChannelPreviewLastMessage = <
         onClick={onSelectChannel}
         ref={channelPreviewButton}
       >
-        {unread && unread >= 1 && (
+        {unread && unread >= 1 ? (
           <div className='str-chat__channel-preview--dot' />
-        )}
+        ) : null}
         <Avatar image={displayImage} name={displayTitle} />
         <div className='str-chat__channel-preview-info'>
           <span className='str-chat__channel-preview-title'>
             {displayTitle}
           </span>
           <span className='str-chat__channel-preview-last-message'>
-            {/* @ts-expect-error TODO: address this when the utils file is converted to TS */}
             {truncate(latestMessage, latestMessageLength)}
           </span>
-          {unread && unread >= 1 && (
+          {unread && unread >= 1 ? (
             <span className='str-chat__channel-preview-unread-count'>
               {unread}
             </span>
-          )}
+          ) : null}
         </div>
       </button>
     </div>
@@ -135,8 +134,7 @@ const UnMemoizedChannelPreviewLastMessage = <
 };
 
 /**
- * Used as preview component for channel item in [ChannelList](#channellist) component.
- *
+ * Used as preview component for channel item in [ChannelList](#channellist) component
  * @example ./ChannelPreviewLastMessage.md
  */
 export const ChannelPreviewLastMessage = React.memo(
