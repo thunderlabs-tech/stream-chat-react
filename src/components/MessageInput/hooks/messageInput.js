@@ -712,7 +712,7 @@ export default function useMessageInput(props) {
 
   const uploadNewFiles = useCallback(
     /**
-     * @param {FileList} files
+     * @param {File[]} files
      */
     (files) => {
       Array.from(files)

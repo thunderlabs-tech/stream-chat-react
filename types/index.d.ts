@@ -609,7 +609,7 @@ export interface MessageInputState {
 }
 
 export interface MessageInputUploadsProps extends MessageInputState {
-  uploadNewFiles?(files: FileList): void;
+  uploadNewFiles?(files: File[]): void;
   removeImage?(id: string): void;
   uploadImage?(id: string): void;
   removeFile?(id: string): void;
@@ -629,7 +629,7 @@ interface MessageInputHookProps {
   textareaRef: React.MutableRefObject<HTMLTextAreaElement | undefined>;
   emojiPickerRef: React.MutableRefObject<HTMLDivElement | null>;
   // handlers
-  uploadNewFiles(files: FileList): void;
+  uploadNewFiles(files: File[]): void;
   removeImage(id: string): void;
   uploadImage(id: string): void;
   removeFile(id: string): void;
