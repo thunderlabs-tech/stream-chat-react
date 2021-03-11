@@ -1,7 +1,6 @@
 // @ts-check
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-// @ts-expect-error
 import { FileUploadButton, ImageDropzone } from 'react-file-utils';
 
 import { ChannelContext, TranslationContext } from '../../context';

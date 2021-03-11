@@ -1,7 +1,6 @@
 // @ts-check
 import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
-// @ts-expect-error
 import { FileUploadButton, ImageDropzone } from 'react-file-utils';
 import { Tooltip } from '../Tooltip';
 

@@ -1,11 +1,7 @@
 // @ts-check
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import {
-  FileUploadButton,
-  ImageDropzone,
-  // @ts-expect-error
-} from 'react-file-utils';
+import { FileUploadButton, ImageDropzone } from 'react-file-utils';
 
 import { ChannelContext, TranslationContext } from '../../context';
 import { ChatAutoComplete } from '../ChatAutoComplete';

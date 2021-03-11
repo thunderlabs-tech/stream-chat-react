@@ -10,7 +10,6 @@ import { logChatPromiseExecution } from 'stream-chat';
 import {
   dataTransferItemsHaveFiles,
   dataTransferItemsToFiles,
-  // @ts-expect-error
 } from 'react-file-utils';
 import { ChannelContext } from '../../../context/ChannelContext';
 import { generateRandomId } from '../../../utils';
