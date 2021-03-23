@@ -27,10 +27,12 @@ const Avatar = ({
 
   const initials = (name || '').charAt(0);
 
+  const clickableClass = onClick ? 'str-chat__avatar--clickable' : '';
+
   return (
     <div
       data-testid="avatar"
-      className={`str-chat__avatar str-chat__avatar--${shape}`}
+      className={`str-chat__avatar str-chat__avatar--${shape} ${clickableClass}`}
       title={name}
       style={{
         width: `${size}px`,
