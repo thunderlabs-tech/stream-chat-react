@@ -469,6 +469,8 @@ const ChannelInner = ({
     loadMoreThread,
     onMentionsClick: onMentionsHoverOrClick,
     onMentionsHover: onMentionsHoverOrClick,
+    onUserClick: props.onUserClick,
+    onUserHover: props.onUserHover,
     openThread,
     removeMessage,
     retrySendMessage,
@@ -564,6 +566,20 @@ Channel.propTypes = {
    * @param {User} user   Target [user object](https://getstream.io/chat/docs/#chat-doc-set-user) which is hovered
    */
   onMentionsHover: PropTypes.func,
+  /**
+   * Callback invoked when the user clicks on an avatar
+   *
+   * @param {Event} event DOM click event
+   * @param {User} user   Target [user object](https://getstream.io/chat/docs/#chat-doc-set-user) which is clicked
+   */
+  onUserClick: PropTypes.func,
+  /**
+   * Callback invoked when the user hovers over an avatar
+   *
+   * @param {Event} event DOM hover event
+   * @param {User} user   Target [user object](https://getstream.io/chat/docs/#chat-doc-set-user) which is hovered
+   */
+  onUserHover: PropTypes.func,
   /** Whether to allow multiple attachment uploads */
   multipleUploads: PropTypes.bool,
   /** List of accepted file types */

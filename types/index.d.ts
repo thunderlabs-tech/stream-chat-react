@@ -162,6 +162,10 @@ export interface ChannelContextValue extends ChatContextValue {
   onMentionsClick?(e: React.MouseEvent, user: Client.UserResponse[]): void;
   /** Function to be called when hovering over a @mention. Function has access to the DOM event and the target user object */
   onMentionsHover?(e: React.MouseEvent, user: Client.UserResponse[]): void;
+  /** Function to be called when a user's avatar is clicked. Function has access to the DOM event and the target user object */
+  onUserClick?(e: React.MouseEvent, user: Client.UserResponse[]): void;
+  /** Function to be called when hovering over a user's avatar. Function has access to the DOM event and the target user object */
+  onUserHover?(e: React.MouseEvent, user: Client.UserResponse[]): void;
   openThread?(
     message: Client.MessageResponse,
     event: React.SyntheticEvent,
@@ -206,6 +210,10 @@ export interface ChannelProps {
   onMentionsClick?(e: React.MouseEvent, user?: Client.UserResponse): void;
   /** Function to be called when hovering over a @mention. Function has access to the DOM event and the target user object */
   onMentionsHover?(e: React.MouseEvent, user?: Client.UserResponse): void;
+  /** Function to be called when a user's avatar is clicked. Function has access to the DOM event and the target user object */
+  onUserClick?(e: React.MouseEvent, user?: Client.UserResponse): void;
+  /** Function to be called when hovering over a user's avatar. Function has access to the DOM event and the target user object */
+  onUserHover?(e: React.MouseEvent, user?: Client.UserResponse): void;
 
   /** Override send message request (Advanced usage only) */
   doSendMessageRequest?(

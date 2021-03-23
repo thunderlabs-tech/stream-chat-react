@@ -280,6 +280,8 @@ class MessageList extends PureComponent {
               messageListRect: this.state.messageListRect,
               mutes: this.props.mutes,
               onMentionsClick: this.props.onMentionsClick,
+              onUserClick: this.props.onUserClick,
+              onUserHover: this.props.onUserHover,
               onMentionsHover: this.props.onMentionsHover,
               openThread: this.props.openThread,
               removeMessage: this.props.removeMessage,
@@ -437,6 +439,10 @@ MessageList.propTypes = {
   onMentionsClick: PropTypes.func,
   /** **Available from [channel context](https://getstream.github.io/stream-chat-react/#channel)** */
   onMentionsHover: PropTypes.func,
+  /** **Available from [channel context](https://getstream.github.io/stream-chat-react/#channel)** */
+  onUserClick: PropTypes.func,
+  /** **Available from [channel context](https://getstream.github.io/stream-chat-react/#channel)** */
+  onUserHover: PropTypes.func,
   /** **Available from [channel context](https://getstream.github.io/stream-chat-react/#channel)** */
   openThread: PropTypes.func,
   /** **Available from [channel context](https://getstream.github.io/stream-chat-react/#channel)** */
