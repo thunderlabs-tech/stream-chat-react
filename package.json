@@ -171,11 +171,7 @@
     "lint": "yarn prettier && yarn eslint && yarn stylelint",
     "lint-fix": "yarn prettier-fix && yarn eslint --fix && yarn stylelint --fix",
     "build-translations": "rm -rf .tmpi18ncache || true && mkdir .tmpi18ncache && yarn run babel --config-file ./babel.i18next-extract.js 'src/**/*.{js,jsx,ts,tsx}' --out-dir '.tmpi18ncache/' && rm -rf .tmpi18ncache && prettier --write 'src/i18n/*.{js,json}'",
-    "validate-translations": "node scripts/validate-translations.js",
-    "prepare": "yarn run build",
-    "preversion": "yarn install && yarn lint && yarn test",
-    "version": "yarn docs && git add docs",
-    "postversion": "git push && git push --tags && npm publish"
+    "validate-translations": "node scripts/validate-translations.js"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss",
