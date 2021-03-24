@@ -110,7 +110,6 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "htmlparser2": "^5.0.1",
-    "husky": "^4.3.0",
     "jest": "^26.6.3",
     "node-sass": "^5.0.0",
     "node-sass-import": "^2.0.1",
@@ -145,11 +144,6 @@
     "webpack": "4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "~3.11.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "dotgit/hooks/pre-commit-format.sh && dotgit/hooks/pre-commit-reject-binaries.py"
-    }
   },
   "scripts": {
     "test": "rm -rf built && jest",
